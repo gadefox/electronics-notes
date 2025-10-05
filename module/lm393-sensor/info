@@ -1,0 +1,15 @@
+VIN=3.3-5V
+
+1 A0   2 D0   3 GND   4 VCC
+
+LM393:
+ VCC(8)────┤├────GND(4)
+          100nF
+LED:
+        ─►yellow
+ VCC────▶├────────GND
+             1kΩ
+
+        ─►green
+ VCC────▶├────────D0
+             1kΩ

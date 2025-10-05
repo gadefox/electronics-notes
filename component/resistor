@@ -1,0 +1,14 @@
+Nr. strips:
+3, 4: NN*10^N
+5, 6: NNN*10^N
+
+black   0  Ω
+brown   1  x10Ω
+red     2  x100Ω
+orange  3  kΩ
+yellow  4  x10kΩ
+green   5  x100kΩ
+blue    6  MΩ
+purple  7  x10MΩ
+grey    8  x100MΩ
+white   9  GΩ

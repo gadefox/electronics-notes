@@ -1,0 +1,7 @@
+Hakko T12 clone:
+ P-MOSFET: D409 BA7B12/amperak: 40V; 22A
+
+buck/boost converter:
+ VIN: 5.5-30V
+ VOUT: 0.5-30V
+ ~ cooler && 50W; 4A || 35W; 3A

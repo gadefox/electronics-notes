@@ -1,0 +1,4 @@
+built-in LED: GPIO2 (inverted logic)
+
+pull-up: GPIO0; EN; RST
+pull-down: GPIO15

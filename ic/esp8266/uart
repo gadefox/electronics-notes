@@ -1,0 +1,6 @@
+UART0:
+RX(GPIO3) => data receive pin
+TX(GPIO1) => data transmit pin
+
+UART1:
+D4(GPIO2) => data transmit pin

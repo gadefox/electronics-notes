@@ -1,0 +1,4 @@
+D5(GPIO14) => HSCLK (clock pin)
+D6(GPIO12) => HMISO (master in slave out)
+D7(GPIO13) => HMOSI (master out slave in)
+D8(GPIO15) => HCS (chip select)

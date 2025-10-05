@@ -1,0 +1,29 @@
+80×160+26+1
+blue 5- green 6- red 5-bits; 0=white, 0xFFFF=black
+
+1 GND -> GND                 5 RES -> GPIO (LOW=reset)
+2 VCC -> 3V3 (optional)      6 DC  -> GPIO
+3 SCL -> D13(PB5)            7 CS  -> GPIO (LOW=enable; HIGH=disable) || GND
+4 SDA -> D11(PB3)            8 BLK -> optional
+
+FPC:                           1 GND   2 TP1   3 TP0
+1 GND  2 LEDA  3 LEDK  4 VCC   5 NC    6 GND   7 CS
+8 RES  9 DC    10 SCL  11 SDA  12 TP1  13 TP0
+
+11: SPI input/output pin
+12/13: touch pin, not used
+
+       ─►white
+VCC────▶├────LEDK
+ VF=2.8-3V
+ IF=15-20mA
+
+VCC────┤├────GND
+      1uF
+           VCC   LEDK
+            │     │
+            10kΩ  10Ω
+            │     │
+BLK────────┴────┤▶ S8050
+      1kΩ         │
+                 GND

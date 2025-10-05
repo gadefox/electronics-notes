@@ -1,0 +1,7 @@
+CN5711
+LED driver
+max 9W; 1-16x LED 3-6V
+
+VIN=2.8-6V
+IOUT=30mA-(~ cooler && 1.5A || 0.7A)
+PWM<2kHz

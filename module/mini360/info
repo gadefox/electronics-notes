@@ -1,0 +1,11 @@
+MP1482DS
+
+1 BS  2 VIN  3 SW  4 GND  5 FB  6 COMP  7 EN  8 SS
+
+1 bootstrap: upper MOSFET; BS-SW=4-6V; BS-GND=VIN-VIN+5V
+2 4.75-18V
+3 300kHz
+5 feedback: ~0.9V
+6 comparator: 1-2V => feedback is active; ~1.2V
+7 enable: >1.5V; ~7.4V
+8 soft-start: ~3.7V
