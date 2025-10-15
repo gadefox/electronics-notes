@@ -1,0 +1,4 @@
+<=2Mbps=250kB/s
+
+format:
+ 8N1: 200kB/s

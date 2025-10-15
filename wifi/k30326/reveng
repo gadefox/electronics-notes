@@ -1,0 +1,9 @@
+Canon motherboard:
+ VIN=3.4V
+ EN=0V
+ F8=0V
+
+power supply:
+ VIN=5V
+ EN=3.38V
+ F8=3V

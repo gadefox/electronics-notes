@@ -1,0 +1,4 @@
+Output Enable
+
+LOW:  Y=A
+HIGH: Y=NC

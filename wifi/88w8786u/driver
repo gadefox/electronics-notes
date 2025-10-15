@@ -1,0 +1,12 @@
+Copy firmware image usb8786.bin | ... to /lib/firmware/mrvl/ directory, and create the directory if it doesn't exist.
+
+For example, to install USB8786 driver,
+insmod mlan.ko
+insmod usb8786.ko [fw_name=mrvl/usb8786.bin]
+
+To install USB8786 driver with MFG firmware file /lib/firmware/mrvl/usb8786mfg.bin, using the following command:
+insmod usb8786.ko mfgmode=1 fw_name=mrvl/usb8786mfg.bin
+
+To remove the USB driver,
+rmmod usb8xxx
+rmmod mlan

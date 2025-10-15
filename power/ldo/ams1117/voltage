@@ -1,0 +1,2 @@
+VOUT=3.3V; 5V; etc
+~ VIN>>VOUT && cooler
