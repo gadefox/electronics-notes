@@ -1,1 +1,1 @@
-IOUT<=2A
+max(IOUT)=2A
