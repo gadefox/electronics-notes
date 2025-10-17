@@ -6,7 +6,7 @@
 ?1 Ready             O
 ?2 Write Protect     O
 3 GND
-4 Card Detect  LOW=no card
+4 Card Detect  O  LOW=no card
 5 GND
 6 UD-
 7 UD+
