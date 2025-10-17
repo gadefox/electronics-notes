@@ -1,0 +1,4 @@
+VCC=3.3V
+
+VIN=5V
+internal LDO
