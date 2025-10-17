@@ -3,8 +3,8 @@
 ╱1   3   5   7   9|
 ▶        
 
-?1 Ready             O
-?2 Write Protect     O
+1 Status??     O  HIGH=ready?
+2 ??           O  HIGH?
 3 GND
 4 Card Detect  O  LOW=no card
 5 GND
