@@ -15,13 +15,13 @@ FPC pads
 17  07     D6
 18  08     D7
 
-19  CP414
+19  CP414  DEN
 20  10     SDI
 21  09     SCL
 22  11     CSB
 23  CP418  TEST
-24  CP419
-25  12
+24  CP419  SHUT
+25  12     RESN
 
 N/A 16     LED
 
