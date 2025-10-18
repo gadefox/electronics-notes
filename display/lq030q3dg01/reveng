@@ -22,9 +22,9 @@ HIGH: 22-25
 
 ----
 TFT:
-1x separe | TEST?? | 3x vedla seba
-1x pull-up
-1x pull-down
+1x | TEST?? | 3x
+19 pull-up
+24 pull-down
 
 ----
 3.5" datasheet:
