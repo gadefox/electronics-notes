@@ -24,7 +24,7 @@ with open(path, "rb") as f:
     fw_seqnum += 1
     cmd, addr, length, crc = struct.unpack("<4I", header)
     if cmd == 1:
-      print(f"{fw_seqnum} DNLD: addr=0x{addr:08X}({addr}) length={length} crc={crc:08X}")
+      print(f"{fw_seqnum} DNLD: addr=0x{addr:08X}({addr}) length={length} crc=0x{crc:08X}")
     elif cmd == 4:
       if addr != 0:        print(f"⚠️invalid addr value: {addr}")
       if length != 0:      print(f"⚠️invalid length value: {length}")
@@ -32,12 +32,12 @@ with open(path, "rb") as f:
       print(f"{fw_seqnum} LAST")
     elif cmd == 6:
       if length != 0:      print(f"⚠️invalid length value: {length}")
-      print(f"{fw_seqnum} CMD6: data=0x{addr:08X}({addr}) crc={crc:08X}")
+      print(f"{fw_seqnum} CMD6: data=0x{addr:08X}({addr}) crc=0x{crc:08X}")
     elif cmd == 7:
       if addr != length:   print(f"⚠️invalid addr ({addr}) and length ({length}) values")
-      print(f"{fw_seqnum} CMD7: data={addr} crc={crc:08X}")
+      print(f"{fw_seqnum} CMD7: data={addr} crc=0x{crc:08X}")
       length = 0
     else:
-      print(f"⚠️{fw_seqnum}: cmd={cmd} addr=0x{addr:08X}({addr}) length={length} crc={crc}")
+      print(f"⚠️{fw_seqnum}: cmd={cmd} addr=0x{addr:08X}({addr}) length={length} crc=0x{crc}")
 
     f.seek(length, 1)
