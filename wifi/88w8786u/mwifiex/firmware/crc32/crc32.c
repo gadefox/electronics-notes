@@ -3,8 +3,8 @@
 #include <string.h>
 #include <byteswap.h>
 
-/* reflexted and swapped */
-uint32_t crc32rs(const uint8_t *data, size_t len) {
+/* reflexted */
+uint32_t crc32(const uint8_t *data, size_t len) {
     uint32_t crc = 0;
     for (size_t i = 0; i < len; i++) {
         crc ^= data[i] << 24;
@@ -13,7 +13,6 @@ uint32_t crc32rs(const uint8_t *data, size_t len) {
         }
     }
     return crc;
-//    return __builtin_bswap32(crc);
 }
 
 void test(uint32_t cmd, uint32_t addr, uint32_t len, uint32_t crc)
@@ -28,10 +27,10 @@ void test(uint32_t cmd, uint32_t addr, uint32_t len, uint32_t crc)
     data[2] = len;
     data[3] = crc;
    
-    calc = crc32rs((uint8_t*)data, sizeof(data) - sizeof(uint32_t));
+    calc = crc32((uint8_t*)data, sizeof(data) - sizeof(uint32_t));
     printf("CRC32 reflect+swap: 0x%08X\n", __builtin_bswap32(calc));
 
-    calc = crc32rs((uint8_t*)data, sizeof(data));
+    calc = crc32((uint8_t*)data, sizeof(data));
     printf("Test (0=OK): %d\n\n", calc);
 }
 
@@ -68,10 +67,10 @@ int main() {
 
     // crc: with payload
     printf("Target CRC: 0x%08X\n", data[3]);
-    crc = crc32rs(buf, 12);
+    crc = crc32(buf, 12);
     printf("CRC32 header: 0x%08X\n", __builtin_bswap32(crc));
-    crc = crc32rs(buf, 16);
+    crc = crc32(buf, 16);
     printf("Test (0=OK): %d\n", crc);
-    crc = crc32rs(buf + 16, 512);
+    crc = crc32(buf + 16, 512);
     printf("Test payload (0=OK): %d\n", crc);
 }
