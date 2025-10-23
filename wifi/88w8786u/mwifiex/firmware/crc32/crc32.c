@@ -28,10 +28,10 @@ void test(uint32_t cmd, uint32_t addr, uint32_t len, uint32_t crc)
     data[3] = crc;
    
     calc = crc32((uint8_t*)data, sizeof(data) - sizeof(uint32_t));
-    printf("CRC32 reflect+swap: 0x%08X\n", __builtin_bswap32(calc));
+    printf("CRC32 reflected+swapped: 0x%08X\n", __builtin_bswap32(calc));
 
     calc = crc32((uint8_t*)data, sizeof(data));
-    printf("Test (0=OK): %d\n\n", calc);
+    printf("Test: %d\n\n", calc);
 }
 
 int main() {
@@ -40,6 +40,8 @@ int main() {
     uint32_t crc;
     uint8_t buf[528];
     uint32_t* data = (uint32_t*)buf;
+
+    printf("Test: 0=OK\n\n");
 
     // crc: no payload
     test(0, 0, 0, 0);
@@ -70,7 +72,7 @@ int main() {
     crc = crc32(buf, 12);
     printf("CRC32 header: 0x%08X\n", __builtin_bswap32(crc));
     crc = crc32(buf, 16);
-    printf("Test (0=OK): %d\n", crc);
+    printf("Test header: %d\n", crc);
     crc = crc32(buf + 16, 512);
-    printf("Test payload (0=OK): %d\n", crc);
+    printf("Test payload: %d\n", crc);
 }
