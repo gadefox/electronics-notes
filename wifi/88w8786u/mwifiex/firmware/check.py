@@ -26,20 +26,18 @@ with open(path, "rb") as f:
     if cmd == 1:
       print(f"{fw_seqnum} DNLD: addr=0x{addr:08X}({addr}) length={length} crc={crc:08X}")
     elif cmd == 4:
-      print(f"{fw_seqnum} LAST: data1=0x{addr:08X}({addr}) data2=0x{addr:08X}({legth}) crc={crc:08X}")
-      length = 0
+      if addr != 0:        print(f"⚠️invalid addr value: {addr}")
+      if length != 0:      print(f"⚠️invalid length value: {length}")
+      if crc != 411884319: print(f"⚠️invalid crc value: {crc}")
+      print(f"{fw_seqnum} LAST")
     elif cmd == 6:
-      print(f"{fw_seqnum} CMD6: data1=0x{addr:08X}({addr}) data2=0x{addr:08X}({legth}) crc={crc:08X}")
-      length = 0
+      if length != 0:      print(f"⚠️invalid length value: {length}")
+      print(f"{fw_seqnum} CMD6: data=0x{addr:08X}({addr}) crc={crc:08X}")
     elif cmd == 7:
-      print(f"{fw_seqnum} CMD7: data1=0x{addr:08X}({addr}) data2={length:08X}({length}) crc={crc:08X}")
+      if addr != length:   print(f"⚠️invalid addr ({addr}) and length ({length}) values")
+      print(f"{fw_seqnum} CMD7: data={addr} crc={crc:08X}")
       length = 0
-    elif cmd == 10:
-      print(f"{fw_seqnum} CMD10: data1=0x{addr:08X}({addr}) data2={length:08X}({length}) crc={crc:08X}")
-      length = 0
-    elif cmd == 21:
-      print(f"{fw_seqnum} CMD21: data1=0x{addr:08X}({addr}) data2={length:08X}({length}) crc={crc:08X}")
     else:
-      print(f"⚠️{fw_seqnum}: cmd={cmd} addr=0x{addr:08X} length={length} crc={crc}")
+      print(f"⚠️{fw_seqnum}: cmd={cmd} addr=0x{addr:08X}({addr}) length={length} crc={crc}")
 
     f.seek(length, 1)

@@ -1,14 +1,20 @@
 =1: download firmware segment
 
 =4: last segment
+base_addr==0
+data_length==0
+crc==0x188CDB1F(411884319)
 
 =5: ??
 
-examples:
+pcieuart8997combo pcieusb8997combo
+
 1 cmd=5 addr=0x00000000 length=12 crc=297480861
 
 =6: used for sync between host and firmware loader?
 length==0
+
+8887 8897 8977 8997
 
 examples:
 504 CMD6: data=0x00000000(0) crc=144A3610
@@ -30,6 +36,9 @@ examples:
 91 DNLD: addr=0x00000000(0) length=512 crc=08BA4704
 
 =7: init? e.g switch download region? boot mode?
+base_addr==data_length
+
+8977_combo 8997_combo
 
 examples:
 1 CMD7: data1=0x00000003(3) data2=00000003(3) crc=227E559B
