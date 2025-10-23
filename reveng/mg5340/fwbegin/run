@@ -1,0 +1,17 @@
+#!/bin/rc
+
+dir = `(dirname $0)
+
+. /usr/local/libexec/rc/notify
+notify_icon = whatever
+notify_title = Attack:
+
+for (i in `(seq 1 1000)) {
+  echo segment=$i
+  ret = `($dir/segm)
+  ~ $ret ok && break
+}
+python3 $dir/check.py $dir/segm.bin
+
+notify_show 'Found something..'
+paplay --volume=43690 /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga

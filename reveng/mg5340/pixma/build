@@ -1,0 +1,4 @@
+#!/bin/sh
+
+gcc decrypt.c -o decrypt
+gcc unpack.c -o unpack

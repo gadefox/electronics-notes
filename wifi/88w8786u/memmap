@@ -1,0 +1,8 @@
+0x00000000  main firmware RAM image (~175KB)
+0x04000000  USB DMA buffer (stage area)
+0xC0001100  SRAM execution base (ARM7/ARM9 TCM)
+
+single-stage boot via USB
+no multi-stage secure boot
+no TIM (Trusted Image Module) signed images
+no XIP (Execute-in-Place)

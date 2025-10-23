@@ -1,0 +1,1 @@
+../../../wifi/88w8786u/mwifiex/firmware/check.py

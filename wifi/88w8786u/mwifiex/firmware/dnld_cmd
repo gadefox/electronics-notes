@@ -1,0 +1,46 @@
+=1: download firmware segment
+
+=4: last segment
+
+=5: ??
+
+examples:
+1 cmd=5 addr=0x00000000 length=12 crc=297480861
+
+=6: used for sync between host and firmware loader?
+length==0
+
+examples:
+504 CMD6: data=0x00000000(0) crc=144A3610
+505 DNLD: addr=0x00000000(0) length=512 crc=08BA4704
+..
+342 CMD6: data=0x00080A4D(526925) crc=39416A7F
+343 DNLD: addr=0x00000000(0) length=512 crc=08BA4704
+..
+333 CMD6: data=0x00080CF9(527609) crc=AEE2B639
+334 DNLD: addr=0x00000000(0) length=1024 crc=1A519400
+..
+338 CMD6: data=0x00080D2D(527661) crc=9AB29F76
+339 DNLD: addr=0x00000000(0) length=512 crc=08BA4704
+..
+334 CMD6: data=0x00080ECD(528077) crc=F9A9F63F
+335 DNLD: addr=0x00000000(0) length=1024 crc=1A519400
+..
+90 CMD6: data=0x00080F2D(528173) crc=B86231E8
+91 DNLD: addr=0x00000000(0) length=512 crc=08BA4704
+
+=7: init? e.g switch download region? boot mode?
+
+examples:
+1 CMD7: data1=0x00000003(3) data2=00000003(3) crc=227E559B
+2 DNLD: addr=0xA0080000(2684878848) length=512 crc=DBD6F6D3
+..
+CMD7: boot mode init
+├─ 0xA0080000 - primary bootloader (TIM)
+├─ 0xB0000000 - secondary bootloader
+├─ 0xC0000000 - tertiary stage (OBMI/WTMI)
+├─ 0xFF800000 - main firmware (~4MB)
+└─ CMD6: partition switch
+    └─ 0x00000000 - DDR init/training data
+
+Used for embeded SoC w/ own flash memory and a complete OS stack.

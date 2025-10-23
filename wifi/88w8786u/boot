@@ -1,0 +1,18 @@
+power-on
+   ↓
+ROM bootloader (on-chip)
+   ↓
+read 1KB EEPROM:
+ crystal frequency trim
+ region/regulatory code
+ MAC address
+ RF calibration data → PA, channel offsets
+ USB descriptors → VID=0x1286, PID=0x203c
+   ↓
+enumerate as USB device
+   ↓
+host sends firmware → USB bulk transfer
+   ↓
+read FW to internal SRAM/TCM (Tightly Coupled Memory)
+   ↓
+execute from RAM

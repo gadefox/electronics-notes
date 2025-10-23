@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gcc crc32.c -o crc32
