@@ -114,6 +114,7 @@ int main(void)
     size_t n;
     uint8_t buf[532];
     FILE *f;
+    struct fw_header hdr2;
     struct fw_header* hdr = (struct fw_header*)buf;
 
     // read blob file
@@ -164,5 +165,11 @@ int main(void)
     crc32_print(buf, 12, n);
     crc32_print(buf, 16, n);
 
+    hdr2.dnld_cmd = 4;
+    hdr2.base_addr = 0;
+    hdr2.data_len = 0;
+    hdr2.crc = 0x188CDB1F;
+
+    crc32_print((uint8_t*)&hdr2, 0, 16);
     return 0;
 }
