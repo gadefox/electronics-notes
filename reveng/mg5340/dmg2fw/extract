@@ -15,7 +15,7 @@ echo extract files:
 
 echo
 echo remove binary header
-tail -c +69 $dir/Printer Update/Printer Update.app/Contents/Resources/MG5300-2_020.dat > $dir/pixma.srec
+tail -c +69 $dir'/Printer Update/Printer Update.app/Contents/Resources/MG5300-2_020.dat' > $dir/pixma.srec
 
 echo
 echo convert to binary:

@@ -1,0 +1,12 @@
+#!/bin/rc
+
+dir = `(dirname $0)
+xxd -r -p $dir/blob.hex $dir/blob.bin
+
+#o = `(python3 $dir/find.py)
+o = `(echo 3718780)
+~ o () && exit 1
+
+dd if=$dir/blob.bin of=$dir/segm.bin bs=1 skip=$o status=progress
+echo
+python3 $dir/check.py $dir/segm.bin

@@ -37,6 +37,7 @@ examples:
 
 =7: init? e.g switch download region? boot mode?
 base_addr==data_length
+no payload
 
 8977_combo 8997_combo
 
@@ -52,4 +53,4 @@ CMD7: boot mode init
 └─ CMD6: partition switch
     └─ 0x00000000 - DDR init/training data
 
-Used for embeded SoC w/ own flash memory and a complete OS stack.
+used for embeded SoC w/ own flash memory and a complete OS stack
