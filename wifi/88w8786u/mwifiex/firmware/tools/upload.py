@@ -72,8 +72,8 @@ def get_hw_spec_cmd(dev: usb.core.Device, seq_num=1):
     cmd_result
   )
 
-  p = b'\x00'
-  packet = packet + p
+  packet = b'\x00' * 512
+#  packet = packet + p
 
   print("Sending:", packet.hex())
   dev.write(marvell_ep_cmd, packet, timeout=100)
