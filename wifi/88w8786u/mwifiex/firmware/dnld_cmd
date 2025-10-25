@@ -1,6 +1,6 @@
 =1: download firmware segment
 
-=4: last segment
+=4: last/exec
 base_addr==0
 data_length==0
 crc==0x188CDB1F(411884319)
@@ -11,7 +11,7 @@ pcieuart8997combo pcieusb8997combo
 
 1 cmd=5 addr=0x00000000 length=12 crc=0x297480861
 
-=6: used for sync between host and firmware loader?
+=6: ??
 length==0
 
 8887 8897 8977 8997
@@ -45,7 +45,7 @@ examples:
 1 CMD7: data=3 crc=0x227E559B
 2 DNLD: addr=0xA0080000(2684878848) length=512 crc=0xDBD6F6D3
 ..
-CMD7: boot mode init
+CMD7: boot mode init?
 ├─ 0xA0080000 - primary bootloader (TIM)
 ├─ 0xB0000000 - secondary bootloader
 ├─ 0xC0000000 - tertiary stage (OBMI/WTMI)
@@ -53,4 +53,4 @@ CMD7: boot mode init
 └─ CMD6: partition switch
     └─ 0x00000000 - DDR init/training data
 
-used for embeded SoC w/ own flash memory and a complete OS stack
+used for embeded SoC w/ own flash memory and a complete OS stack?

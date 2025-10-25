@@ -20,7 +20,7 @@ void test(uint32_t cmd, uint32_t addr, uint32_t len, uint32_t crc)
     uint32_t data[4];
     uint32_t calc;
 
-    printf("Target CRC: 0x%08X\n", crc);
+    printf("Target CRC: 0x%08X (cmd=%d)\n", crc, cmd);
 
     data[0] = cmd;
     data[1] = addr;
@@ -46,6 +46,7 @@ int main() {
     // crc: no payload
     test(0, 0, 0, 0);
     test(4, 0, 0, 0x188CDB1F);
+    test(5, 0, 12, 0x11BB329D);
     test(6, 0, 0, 0x144A3610);
     test(6, 0x00080A4D, 0, 0x39416A7F);
     test(6, 0x00080CF9, 0, 0xAEE2B639);
@@ -53,6 +54,9 @@ int main() {
     test(6, 0x00080ECD, 0, 0xF9A9F63F);
     test(6, 0x00080F2D, 0, 0xB86231E8);
     test(7, 3, 3, 0x227E559B);
+    test(10, 0, 0, 0x3CDE5A30);
+    test(21, 0, 0, 0x7E5F4367);
+    test(99, 0, 0, 0xFD99BE0F);
 
     // read blob file
     f = fopen("segm.bin", "rb");
