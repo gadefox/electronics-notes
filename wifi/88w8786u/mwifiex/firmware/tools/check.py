@@ -1,6 +1,7 @@
 import struct, sys
 from pathlib import Path
 from colorama import init, Fore, Style
+
 init(autoreset=True)
 
 def info(msg: str):

@@ -1,0 +1,7 @@
+#!/bin/rc
+
+dir = `(dirname $0)
+
+python3 $dir/extract.py $dir/1000.fw
+python3 $dir/extract.py $dir/1001.fw
+python3 $dir/extract.py $dir/1002.fw

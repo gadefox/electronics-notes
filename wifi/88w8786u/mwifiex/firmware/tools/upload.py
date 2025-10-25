@@ -3,6 +3,7 @@ import usb.core, usb.util
 import subprocess
 from pathlib import Path
 from colorama import init, Fore, Style
+
 init(autoreset=True)
 
 def info(msg: str):
