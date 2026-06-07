@@ -1,0 +1,8 @@
+1 VCC=5V                    16 GND
+2 TEST_D/op-amp_1IN+ (Q-B)  15 SW_in/out
+3 TEST_C/op-amd_1IN+ (Q-B)  14 SW_on/off
+4 buck_boost-EN (R25 Q-B)   13 op-amp_OUT1 (R18)
+5 LED on/off (R28)          12 Rtrim_CV (R3)
+6 HT12_DATA                 11 LCD_LED1 (R6)
+7 HT11_WR                   10 LCD_LED2 (R19)
+8 HT9_CS                    9  TEST_O
