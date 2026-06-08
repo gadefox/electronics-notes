@@ -7,9 +7,9 @@ CPLD:
 U19     LC4128V5TN100       LPFQ-100    ispMACH 4000V; 128 macrocells
 
 DC/DC buck:
-U13     5ATI 51100          SOP-10      ? pinout: 1=VCC 4/8=GND; V(C150)=1.2V V(C153)=5V
+U13     5ATI 51100          SOP-10      TI TPS51100; VIN=5V VREF=1.2V
 U8      TPS54110            SOP-20      TI; VIN=5V VOUT=2.5V
-U?      TPS54310            SOP-20      TI; VIN=5V VOUT=1.2V
+U5      TPS54310            SOP-20      TI; VIN=5V VOUT=1.2V
 
 fuse:
 F1/2/3  P185                            1.85A

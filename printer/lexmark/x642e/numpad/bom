@@ -16,7 +16,11 @@ DC/DC boost:
 U23         ABTK        SOT-23      MAX8571EUT
 
 MCU:
-U3          H8186B      QFP-64      Renesas?
+U3          DF3654CH
+            H8/3684     QFP-64      Renesas; ROM=32KiB RAM=4KiB
+
+DF3654CH
+H8/3684
 
 MOSFET:
 Q8          702         SOT-24      2N7002; N-ch
